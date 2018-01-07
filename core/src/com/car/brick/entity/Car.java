@@ -8,20 +8,46 @@ import com.badlogic.gdx.math.Rectangle;
  */
 
 public class Car extends Rectangle {
-    public Car() {
+    int speedX,speedY;
+
+    public Car(int speedX, int speedY) {
+        this.speedX = speedX;
+        this.speedY = speedY;
     }
 
-    public Car(float x, float y, float width, float height) {
+    public Car(float x, float y, float width, float height, int speedX, int speedY) {
         super(x, y, width, height);
+        this.speedX = speedX;
+        this.speedY = speedY;
     }
 
-    public Car(Rectangle rect) {
+    public Car(Rectangle rect, int speedX, int speedY) {
         super(rect);
+        this.speedX = speedX;
+        this.speedY = speedY;
     }
+
+    public int getSpeedX() {
+        return speedX;
+    }
+
+    public void setSpeedX(int speedX) {
+        this.speedX = speedX;
+    }
+
+    public int getSpeedY() {
+        return speedY;
+    }
+
+    public void setSpeedY(int speedY) {
+        this.speedY = speedY;
+    }
+
     public void move(){
-        y++;
+        this.y+=this.speedY;
     }
     public void move(int y){
-        this.y+=y;
+        this.y=this.y+this.speedY+y;
     }
+
 }
